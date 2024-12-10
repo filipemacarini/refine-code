@@ -45,7 +45,7 @@
 
         public void MarkAllTasksAs(Status status)
         {
-            if (_tasks == null || _tasks.Count == 0)
+            if (_tasks.Count == 0)
             {
                 return;
             }
@@ -60,7 +60,7 @@
 
         private int GetCurrentId()
         {
-            if (_tasks == null || _tasks.Count == 0)
+            if (_tasks.Count == 0)
             {
                 return 0;
             }

@@ -1,4 +1,6 @@
-﻿namespace TaskManager
+﻿using System.Threading.Tasks;
+
+namespace TaskManager.Refactored
 {
     public static class TaskPrinter
     {
@@ -11,9 +13,7 @@
             _printsCounter++;
 
             foreach (Task task in tasks)
-            {
                 PrintTask(task);
-            }
         }
 
         public static void PrintTask(Task task)
@@ -26,9 +26,7 @@
             task.PrintPropertie(nameof(task.Status), task.Status);
         }
 
-        private static void PrintLine()
-        {
+        private static void PrintLine() => 
             Console.WriteLine("--------------------------------------------------");
-        } 
     }
 }

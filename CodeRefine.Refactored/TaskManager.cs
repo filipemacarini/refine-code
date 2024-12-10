@@ -2,11 +2,11 @@
 {
     public class TaskManager
     {
-        private readonly List<Task> _tasks;
+        private readonly List<Task> _tasks = new List<Task>();
 
         public void AddTask(string title, string description)
         {
-            var id = _tasks.Max(task => task.Id);
+            var id = GetCurrentId();
             var task = new Task(id, title, description);
             _tasks.Add(task);
         }
@@ -22,5 +22,20 @@
 
         public List<Task> GetTasks() =>
             _tasks;
+
+        public void MarkAllTasksAs(Status status)
+        {
+            if (_tasks.Count == 0) return;
+
+            foreach (var task in _tasks)
+                task.MarkAs(status);
+        }
+
+        private int GetCurrentId()
+        {
+            if (_tasks.Count == 0) return 0;
+
+            return _tasks.Max(task => task.Id) + 1;
+        }
     }
 }
