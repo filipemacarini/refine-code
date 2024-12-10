@@ -1,9 +1,7 @@
-﻿namespace TaskManager
+﻿namespace TaskManager;
+public enum Status
 {
-    public enum Status
-    {
-        NotStarted,
-        InProgress,
-        Completed
-    }
+    NotStarted,
+    InProgress,
+    Completed
 }

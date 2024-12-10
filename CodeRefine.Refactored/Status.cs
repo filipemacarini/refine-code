@@ -1,9 +1,7 @@
-﻿namespace TaskManager.Refactored
+﻿namespace TaskManager.Refactored;
+public enum Status
 {
-    public enum Status
-    {
-        NotStarted,
-        InProgress,
-        Completed
-    }
+    NotStarted,
+    InProgress,
+    Completed
 }
