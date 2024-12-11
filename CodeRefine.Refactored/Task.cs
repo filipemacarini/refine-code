@@ -14,6 +14,9 @@ public class Task : AbstractTask
         Status = Status.NotStarted;
     }
 
-    public override void MarkAs(Status status) =>
+    public override void MarkAs(Status status)
+    {
+        if (status == Status.NotStarted) return;
         Status = status;
+    }
 }

@@ -6,7 +6,7 @@ public class Program
     {
         var taskManager = new TaskManager();
 
-        taskManager.AddTask("Refatorar", "Refatore esse projeto em TaskManager.Refactored");
+        taskManager.AddTask("Refatorar", "Refatore esse projeto em TaskManager");
         taskManager.AddTask("Apoiar", "Se inscreva no meu canal");
         taskManager.AddTask("Acompanhar", "Baixe esse projeto no meu github (na descrição)");
         taskManager.AddTask("Apoiar", "Deixa o like e comenta o que está achando da aula");
