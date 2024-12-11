@@ -5,7 +5,7 @@ public class TaskManager
 
     public void AddTask(string title, string description)
     {
-        var id = GetCurrentId();
+        var id = GetNextId();
         var task = new Task(id, title, description);
         _tasks.Add(task);
     }
@@ -28,6 +28,6 @@ public class TaskManager
             task.MarkAs(status);
     }
 
-    private int GetCurrentId() =>
+    private int GetNextId() =>
         _tasks.Any() ? _tasks.Max(task => task.Id) + 1 : 0;
 }
