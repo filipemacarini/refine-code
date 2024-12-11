@@ -13,7 +13,4 @@ public class Task
         Description = description;
         Status = Status.NotStarted;
     }
-
-    public void PrintPropertie(string name, object value) =>
-        Console.WriteLine($"{name}: {value}");
 }

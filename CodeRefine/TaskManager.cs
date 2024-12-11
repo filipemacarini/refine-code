@@ -44,38 +44,24 @@ public class TaskManager
 
     public void MarkAllTasksAs(Status status)
     {
-        if (_tasks.Count == 0)
+        foreach (var task in _tasks)
         {
-            return;
-        }
-        else
-        {
-            foreach (var task in _tasks)
-            {
-                task.Status = status;
-            }
+            task.Status = status;
         }
     }
 
     private int GetCurrentId()
     {
-        if (_tasks.Count == 0)
-        {
-            return 0;
-        }
-        else
-        {
-            var maxId = 0;
+        var maxId = -1;
 
-            foreach (var task in _tasks)
+        foreach (var task in _tasks)
+        {
+            if (task.Id > maxId)
             {
-                if (task.Id > maxId)
-                {
-                    maxId = task.Id;
-                }
+                maxId = task.Id;
             }
-
-            return maxId + 1;
         }
+
+        return maxId + 1;
     }
 }

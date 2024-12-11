@@ -7,10 +7,7 @@ public class Program
         var taskManager = new TaskManager();
 
         taskManager.AddTask("Refatorar", "Refatore esse projeto em TaskManager.Refactored");
-        taskManager.AddTask("Apoiar", "Se inscreva no meu canal"); 
-
-        TaskPrinter.PrintTasks(taskManager.GetTasks());
-
+        taskManager.AddTask("Apoiar", "Se inscreva no meu canal");
         taskManager.AddTask("Acompanhar", "Baixe esse projeto no meu github (na descrição)");
         taskManager.AddTask("Apoiar", "Deixa o like e comenta o que está achando da aula");
 
@@ -23,6 +20,12 @@ public class Program
             taskManager
                 .GetTaskById(0)
                 .Status = Status.NotStarted;
+        }
+
+        var task = taskManager.GetTaskById(0);
+        if (task != null)
+        {
+            task.Status = Status.NotStarted;
         }
 
         if (taskManager.GetTaskById(1) != null)
@@ -40,6 +43,5 @@ public class Program
         }
 
         TaskPrinter.PrintTasks(taskManager.GetTasks());
-
     }
 }

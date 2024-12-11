@@ -16,7 +16,4 @@ public class Task : AbstractTask
 
     public override void MarkAs(Status status) =>
         Status = status;
-
-    public override void PrintPropertie(string name, object value) =>
-        Console.WriteLine($"{name}: {value}");
 }

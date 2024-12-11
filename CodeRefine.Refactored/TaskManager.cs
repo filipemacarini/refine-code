@@ -24,16 +24,10 @@ public class TaskManager
 
     public void MarkAllTasksAs(Status status)
     {
-        if (_tasks.Count == 0) return;
-
         foreach (var task in _tasks)
             task.MarkAs(status);
     }
 
-    private int GetCurrentId()
-    {
-        if (_tasks.Count == 0) return 0;
-
-        return _tasks.Max(task => task.Id) + 1;
-    }
+    private int GetCurrentId() =>
+        _tasks.Any() ? _tasks.Max(task => task.Id) + 1 : 0;
 }

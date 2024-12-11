@@ -17,11 +17,14 @@ public static class TaskPrinter
     {
         PrintLine();
 
-        task.PrintPropertie(nameof(task.Id), task.Id);
-        task.PrintPropertie(nameof(task.Title), task.Title);
-        task.PrintPropertie(nameof(task.Description), task.Description);
-        task.PrintPropertie(nameof(task.Status), task.Status);
+        PrintPropertie(nameof(task.Id), task.Id);
+        PrintPropertie(nameof(task.Title), task.Title);
+        PrintPropertie(nameof(task.Description), task.Description);
+        PrintPropertie(nameof(task.Status), task.Status);
     }
+
+    public static void PrintPropertie(string name, object value) =>
+        Console.WriteLine($"{name}: {value}");
 
     private static void PrintLine() => 
         Console.WriteLine("--------------------------------------------------");
