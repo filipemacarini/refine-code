@@ -5,29 +5,50 @@ public static class TaskPrinter
 
     public static void PrintTasks(List<Task> tasks)
     {
-        PrintLine();
-        Console.WriteLine($"Exibindo lista pela {_printsCounter}º vez");
-        _printsCounter++;
-
-        foreach (Task task in tasks)
+        if (tasks == null)
         {
-            PrintTask(task);
+            Console.WriteLine("Lista de Tasks passada é nula");
+        }
+        else
+        {
+            PrintLine();
+            Console.WriteLine($"Exibindo lista pela {_printsCounter}º vez");
+            _printsCounter++;
+
+            foreach (Task task in tasks)
+            {
+                PrintTask(task);
+            }
         }
     }
 
     public static void PrintTask(Task task)
     {
-        PrintLine();
+        if (task == null)
+        {
+            Console.WriteLine("Task passada é nula");
+        }
+        else
+        {
+            PrintLine();
 
-        PrintPropertie(nameof(task.Id), task.Id);
-        PrintPropertie(nameof(task.Title), task.Title);
-        PrintPropertie(nameof(task.Description), task.Description);
-        PrintPropertie(nameof(task.Status), task.Status);
+            PrintPropertie(nameof(task.Id), task.Id);
+            PrintPropertie(nameof(task.Title), task.Title);
+            PrintPropertie(nameof(task.Description), task.Description);
+            PrintPropertie(nameof(task.Status), task.Status);
+        }
     }
 
     public static void PrintPropertie(string name, object value)
     {
-        Console.WriteLine($"{name}: {value}");
+        if (name == null || value == null)
+        {
+            Console.WriteLine("Nome ou Valor são/é nulos");
+        }
+        else
+        {
+            Console.WriteLine($"{name}: {value}");
+        }
     }
 
     private static void PrintLine()

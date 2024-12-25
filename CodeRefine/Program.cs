@@ -12,5 +12,7 @@ public class Program
         taskManager.AddTask("Acompanhar", "Baixe esse projeto no meu github (na descrição)");
 
         TaskPrinter.PrintTasks(taskManager.GetTasks());
+
+        TaskPrinter.PrintTask(null);
     }
 }

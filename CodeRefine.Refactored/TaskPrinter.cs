@@ -5,6 +5,12 @@ public static class TaskPrinter
 
     public static void PrintTasks(List<Task> tasks)
     {
+        if (tasks == null)
+        {
+            Console.WriteLine("Lista de Tasks passada é nula");
+            return;
+        }
+
         PrintLine();
         Console.WriteLine($"Exibindo lista pela {_printsCounter}º vez");
         _printsCounter++;
@@ -15,6 +21,12 @@ public static class TaskPrinter
 
     public static void PrintTask(Task task)
     {
+        if (task == null)
+        {
+            Console.WriteLine("Task passada é nula");
+            return;
+        }
+
         PrintLine();
 
         PrintPropertie(nameof(task.Id), task.Id);
@@ -23,8 +35,15 @@ public static class TaskPrinter
         PrintPropertie(nameof(task.Status), task.Status);
     }
 
-    public static void PrintPropertie(string name, object value) =>
+    public static void PrintPropertie(string name, object value)
+    {
+        if (name == null || value == null)
+        {
+            Console.WriteLine("Nome ou Valor são/é nulos");
+            return;
+        }
         Console.WriteLine($"{name}: {value}");
+    }
 
     private static void PrintLine() => 
         Console.WriteLine("--------------------------------------------------");
