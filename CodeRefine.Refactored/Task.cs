@@ -1,10 +1,10 @@
 ﻿namespace TaskManager.Refactored;
 public class Task : AbstractTask
 {
-    public int Id { get; }
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public Status Status { get; private set; }
+    public override int Id { get; }
+    public override string Title { get; set; }
+    public override string Description { get; set; }
+    public override Status Status { get; protected set; }
 
     public Task(int id, string title, string description)
     {

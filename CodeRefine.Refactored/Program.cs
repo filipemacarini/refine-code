@@ -11,29 +11,7 @@ public class Program
         taskManager.AddTask("Acompanhar", "Baixe esse projeto no meu github (na descrição)");
         taskManager.AddTask("Apoiar", "Deixa o like e comenta o que está achando da aula");
 
-        taskManager.RemoveTaskById(0);
-
-        taskManager.MarkAllTasksAs(Status.Completed);
-
-        taskManager
-            .GetTaskById(0) // Retorna um NullTask, pois a task com Id = 0 foi removida
-            .MarkAs(Status.InProgress);
-
-        taskManager
-            .GetTaskById(-5) // Retorna um NullTask, pois não existe uma task com Id = -5
-            .MarkAs(Status.InProgress);
-
-        taskManager
-            .GetTaskById(1)
-            .MarkAs(Status.Completed);
-
-        taskManager
-            .GetTaskById(1)
-            .MarkAs(Status.NotStarted); // Não faz nada, pois não é possível marcar como NotStarted
-
-        //taskManager
-        //    .GetTaskById(1)
-        //    .Id = 2; // Não é mais possível alterar Id
+        taskManager.GetTaskById(0).Description = "Teste";
 
         TaskPrinter.PrintTasks(taskManager.GetTasks());
     }

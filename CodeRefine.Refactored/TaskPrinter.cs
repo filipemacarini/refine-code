@@ -3,7 +3,7 @@ public static class TaskPrinter
 {
     private static int _printsCounter = 1;
 
-    public static void PrintTasks(List<Task> tasks)
+    public static void PrintTasks(List<AbstractTask> tasks)
     {
         if (tasks == null)
         {
@@ -19,14 +19,8 @@ public static class TaskPrinter
             PrintTask(task);
     }
 
-    public static void PrintTask(Task task)
+    public static void PrintTask(AbstractTask task)
     {
-        if (task == null)
-        {
-            Console.WriteLine("Task passada é nula");
-            return;
-        }
-
         PrintLine();
 
         PrintPropertie(nameof(task.Id), task.Id);

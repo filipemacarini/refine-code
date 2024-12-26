@@ -1,7 +1,7 @@
 ﻿namespace TaskManager.Refactored;
 public class TaskManager
 {
-    private readonly List<Task> _tasks = new List<Task>();
+    private readonly List<AbstractTask> _tasks = new List<AbstractTask>();
     private int _count = 0;
 
     public void AddTask(string title, string description)
@@ -20,7 +20,7 @@ public class TaskManager
         return task ?? AbstractTask.NULL;
     }
 
-    public List<Task> GetTasks() =>
+    public List<AbstractTask> GetTasks() =>
         _tasks;
 
     public void MarkAllTasksAs(Status status)

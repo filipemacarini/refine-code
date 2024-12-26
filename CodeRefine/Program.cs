@@ -13,6 +13,7 @@ public class Program
 
         TaskPrinter.PrintTasks(taskManager.GetTasks());
 
-        TaskPrinter.PrintTask(null);
+        var task = taskManager.GetTaskById(-80);
+        task.Title = "Teste";
     }
 }
