@@ -2,11 +2,16 @@
 public class TaskManager
 {
     private readonly List<Task> _tasks = new List<Task>();
-    private int _count = 0; 
+    private int _idCounter = 0; 
 
     public void AddTask(string title, string description)
     {
-        var id = _count++;
+        if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(description)) {
+            Console.WriteLine("O título ou descrição passados, são/é null ou vazio");
+            return;
+        }
+
+        var id = _idCounter++;
         var task = new Task(id, title, description);
         _tasks.Add(task);
     }

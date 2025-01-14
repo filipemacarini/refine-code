@@ -15,6 +15,7 @@ public static class TaskPrinter
         Console.WriteLine($"Exibindo lista pela {_printsCounter}º vez");
         _printsCounter++;
 
+
         foreach (Task task in tasks)
             PrintTask(task);
     }

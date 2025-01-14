@@ -12,7 +12,9 @@ public class Program
         taskManager.AddTask("Apoiar", "Deixa o like e comenta o que está achando da aula");
 
         taskManager.GetTaskById(0).Description = "Teste";
+        taskManager.RemoveTaskById(0);
 
         TaskPrinter.PrintTasks(taskManager.GetTasks());
+        
     }
 }
