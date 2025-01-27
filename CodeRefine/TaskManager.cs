@@ -37,7 +37,7 @@ public class TaskManager
             if (task.Id == id)
             {
                 returnTask = task;
-            }
+    }
         }
 
         return returnTask;
